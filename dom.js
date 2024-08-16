@@ -13,6 +13,12 @@ btn.textContent = "Reset";
 btn.style.margin = "0px 0px 10px 0px";
 btn.addEventListener("click", () => {
     let userInput = prompt("Enter the number of boxes each side should have.");
+
+    if (isNaN(userInput) || userInput < 1 || userInput > 100) {
+        alert("Please enter a number between 1 and 100.");
+        return;
+    }
+
     container.innerHTML = "";
 
     let squareSize = 560 / userInput;
